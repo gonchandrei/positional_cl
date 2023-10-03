@@ -16,3 +16,6 @@ test.py
 __pycache__
 
 run.sh
+
+ACDC/
+*.zip
