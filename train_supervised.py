@@ -36,7 +36,10 @@ def run(fold, writer, args):
         logger.print('loading from saved model ' + args.pretrained_model_path)
         dict = torch.load(args.pretrained_model_path,
                             map_location=lambda storage, loc: storage)
-        save_model = dict["net"]
+        if "net" in dict.keys():
+            save_model = dict["net"]
+        else:
+            save_model = dict
         model_dict = model.state_dict()
         # we only need to load the parameters of the encoder
         state_dict = {k: v for k, v in save_model.items() if "encoder" in k}
