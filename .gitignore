@@ -21,3 +21,4 @@ ACDC/
 *.zip
 *.pth
 *.pt
+*.ckpt
